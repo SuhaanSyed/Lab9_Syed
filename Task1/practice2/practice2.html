@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dum Dum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="changingcolors">
+        <div id="p">
+            Create a web page that has a paragraph with some dummy text. Near the paragraph, have a
+            text field to accept the following values: red/green/blue values for the paragraph and
+            red/green/blue values for the border. You also need to control the width of the border
+        </div>
+        <label for="text-color">Text Color</label>
+        <input type="text" id="text-color" name="text-color" placeholder="red, green, blue">
+        <label for="border-color">Border Color</label>
+        <input type="text" id="border-color" name="border-color" placeholder="red, green, blue"><br>
+        <label for="width-size">Width Size</label>
+        <input type="text" id="width-size" name="width-size" placeholder="1, 2, 3">
+    </div>
+    <script>
+        var textColorInput = document.getElementById("text-color");
+        var preview = document.getElementById("preview");
+        var p = document.getElementById("p");
+
+        textColorInput.addEventListener("input", function () {
+            var textColor = textColorInput.value;
+            p.style.color = textColor;
+            preview.style.color = textColor;
+        });
+
+        var borderColorInput = document.getElementById("border-color");
+        borderColorInput.addEventListener("input", function () {
+            var borderColor = borderColorInput.value;
+            p.style.borderColor = borderColor;
+        });
+
+        var widthSizeInput = document.getElementById("width-size");
+        widthSizeInput.addEventListener("input", function () {
+            var widthSize = widthSizeInput.value;
+            p.style.borderWidth = widthSize + "px";
+        });
+    </script>
+</body>
+
+</html>
